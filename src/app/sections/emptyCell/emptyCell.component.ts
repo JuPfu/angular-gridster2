@@ -23,7 +23,7 @@ export class EmptyCellComponent implements OnInit {
       enableOccupiedCellDrop: false,
       emptyCellClickCallback: this.emptyCellClick.bind(this),
       emptyCellContextMenuCallback: this.emptyCellClick.bind(this),
-      emptyCellDropCallback: this.emptyCellClick.bind(this),
+      emptyCellDropCallback: this.emptyCellDrop.bind(this),
       emptyCellDragCallback: this.emptyCellClick.bind(this),
       emptyCellDragMaxCols: 50,
       emptyCellDragMaxRows: 50,
@@ -51,6 +51,12 @@ export class EmptyCellComponent implements OnInit {
   }
 
   emptyCellClick(event: MouseEvent, item: GridsterItem): void {
+    // tslint:disable-next-line:no-console
+    console.info('empty cell click', event, item);
+    this.dashboard.push(item);
+  }
+
+  emptyCellDrop(event: DragEvent, item: GridsterItem): void {
     // tslint:disable-next-line:no-console
     console.info('empty cell click', event, item);
     this.dashboard.push(item);
