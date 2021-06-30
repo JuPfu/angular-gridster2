@@ -118,6 +118,7 @@ export interface GridsterConfig {
   emptyCellDragMaxRows?: number;
   ignoreMarginInRow?: boolean;
   dirType?: dirTypes;
+
   api?: {
     resize?: () => void,
     optionsChanged?: () => void,
